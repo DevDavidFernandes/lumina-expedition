@@ -6,27 +6,12 @@
 
 /* ===== ROOT ===== */
 :root {
-  --bg-void: #050507;
-  --bg-deep: #0b0b10;
-  --bg-surface: #12121a;
-  --bg-elevated: #1a1a24;
-
-  --gold-primary: #d4af37;
-  --gold-soft: #f2d57e;
-  --gold-dark: #8c6b1e;
-
-  --white-ink: #f5f1e8;
-  --white-faded: #d8d2c4;
-
-  --blue-pictos: #4aa3ff;
-  --blue-deep: #1f5fa8;
-  --blue-glow: rgba(74, 163, 255, 0.25);
-
-  --red-petal: #c43b3b;
-  --red-soft: #ff5a5a;
-  --red-glow: rgba(196, 59, 59, 0.25);
-
-  /* TEXTO */
+  --bg-void: #05060f; /* Negror absoluto com toque azul */
+  --bg-deep: #0b0d1a; /* Camada intermediária */
+  --light-core: #e8dfc8; /* Luz central quente (como pergaminho iluminado) */
+  --gold-muted: #8a7340; /* Ouro envelhecido, não brilhante */
+  --petal-white: rgba(240, 235, 220, 0.6); /* Pétalas translúcidas */
+  --dust: rgba(255, 252, 240, 0.25); /* Poeira, quase invisível */ /* TEXTO */
   --text-main: #f5f1e8;
   --text-muted: #a9a39a;
   --text-dark: #6b6660;
