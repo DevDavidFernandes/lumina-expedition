@@ -1,0 +1,27 @@
+:root {
+  /* ===== FUNDO ===== */
+  --bg-void: #05060f;
+  --bg-deep: #0b0d1a;
+  --bg-surface: #12142a; /* cards, painéis */
+  --bg-elevated: #1c1a2e; /* modais, dropdowns */
+
+  /* ===== OURO (clair-obscur) ===== */
+  --gold-primary: #c9a84c; /* ações principais */
+  --gold-soft: #d4b86a; /* hover, destaque suave */
+  --gold-dark: #3d2e0f; /* fundo de botão escuro */
+  --gold-muted: #8a7340; /* divisores, ícones */
+  /* ===== TEXTO ===== */
+  --white-ink: #f0ebe0; /* título principal */
+  --text-main: #e8dfc8; /* texto corrido */
+  --text-muted: #7a7570; /* legendas, hints */
+  --text-dark: #4a4640; /* placeholder */
+
+  /* ===== AZUL (accents) ===== */
+  --blue-pictos: #7b9fc7; /* focus, info */
+  --blue-glow: rgba(123, 159, 199, 0.25);
+
+  /* ===== GLOWS ===== */
+  --glow-gold: 0 0 20px rgba(201, 168, 76, 0.3);
+  --glow-blue: 0 0 18px rgba(123, 159, 199, 0.25);
+  --red-glow: rgba(180, 60, 60, 0.3);
+}

@@ -1,0 +1,36 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* atrás de tudo */
+  pointer-events: none; /* não bloqueia cliques */
+}
+
+.landing {
+  position: relative;
+  z-index: 1; /* na frente do canvas */
+}
+
+/* Base compartilhada */
+.btn {
+  /* padding, font, border-radius... */
+}
+
+/* Variações */
+.btn--primary {
+  background: var(--gold-primary);
+}
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--gold-muted);
+}

@@ -1,15 +1,39 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/global.css" />
-    <title>Document</title>
+    <title>Lumina</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/landing.css" />
+    <link rel="stylesheet" href="css/root.css" />
   </head>
   <body>
-    https://fonts.google.com/specimen/JetBrains+Mono
-    https://fonts.google.com/specimen/Crimson+Text?preview.script=Latn
-    https://fonts.google.com/specimen/Cinzel?preview.script=Latn
-    https://fonts.google.com/specimen/Cinzel+Decorative?preview.script=Latn
+    <canvas id="particleCanvas"></canvas>
+    <main class="landing">
+      <header class="landing__eyebrow">
+        <p>♦ EXPEDIÇÃO · CRESCIMENTO · LUMINA ♦</p>
+      </header>
+
+      <section class="landing__hero">
+        <h1 class="landing__title">LUMINA</h1>
+        <p class="landing__subtitle">A Expedição Começa em Você</p>
+        <div class="landing__divider">
+          <span class="landing__diamond"></span>
+        </div>
+        <p class="landing__description">
+          Transforme sua jornada de desenvolvimento pessoal em uma expedição
+          épica. Complete missões, cultive hábitos e registre cada passo da sua
+          evolução.
+        </p>
+      </section>
+
+      <div class="landing__cta">
+        <button class="btn btn--primary">&#x1F6E1; Iniciar Jornada</button>
+        <button class="btn btn--ghost">Já tenho conta</button>
+      </div>
+    </main>
+
+    <script src="scripts/particles.js"></script>
   </body>
 </html>
