@@ -14,26 +14,18 @@
   justify-content: center;
   gap: 1rem;
   color: var(--gold-primary);
-  font-family: "cinzel";
+  font-family: "Cinzel";
   letter-spacing: 4px;
 }
 
 .eyebrow-line {
   width: 100px;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(201, 168, 76, 1)
-  );
+  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 1));
 }
 
 .eyebrow-line:last-child {
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(201, 168, 76, 1)
-  );
+  background: linear-gradient(to left, transparent, rgba(201, 168, 76, 1));
 }
 
 .landing__hero {
@@ -46,12 +38,13 @@
 
 .landing__title {
   position: relative;
-  width: 600px;
+  width: auto;
+  max-width: 90vw;
   font-family: "Cinzel Decorative";
   color: #e4d7b4;
   font-weight: 900;
   letter-spacing: 15px;
-  font-size: 90px;
+  font-size: clamp(48px, 10vw, 90px);
   display: flex;
   justify-content: center;
   background: none;
@@ -118,8 +111,9 @@
   font-size: 19px;
   letter-spacing: 2px;
   text-align: center;
-
-  width: 50%;
+  margin-top: 2rem;
+  max-width: 520px;
+  width: 90%;
 }
 
 #particleCanvas {
@@ -135,14 +129,16 @@
 /* Base compartilhada */
 .landing__cta {
   display: flex;
-  gap: 1rem; /* ← unidade adicionada */
+  gap: 2rem;
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: "Cinzel";
+  font-weight: 900;
 }
 
 .btn {
-  padding: 0.75rem 1.8rem; /* ← 100rem virou 0.75rem */
+  padding: 0.75rem 1.8rem;
   border-radius: 14px;
   font-weight: 700;
   font-family: inherit;
@@ -150,19 +146,28 @@
   transition: all 0.35s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   border: none;
 }
 
 .btn.btn--primary {
-  /* ← ponto adicionado */
   background: var(--gold-primary);
   color: #0b0d1a;
 }
 
 .btn.btn--ghost {
-  /* ← ponto adicionado */
   background: transparent;
   border: 1px solid var(--gold-muted);
   color: var(--text-main);
+}
+
+.btn.btn--primary:hover {
+  background: var(--gold-soft);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-gold);
+}
+
+.btn.btn--ghost:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
 }
