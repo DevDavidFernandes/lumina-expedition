@@ -12,12 +12,7 @@
 
 body {
   font-family: var(--font-main);
-  background: radial-gradient(
-    ellipse 80% 60% at 50% 45%,
-    #1c1a2e 0%,
-    #0f1020 35%,
-    #05060f 75%
-  );
+  background: black;
   color: var(--text-main);
   min-height: 100vh;
 }
@@ -27,7 +22,7 @@ h2,
 h3 {
   font-family: "Cinzel", serif;
   color: var(--white-ink);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 :root {

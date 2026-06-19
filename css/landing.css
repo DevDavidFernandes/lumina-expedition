@@ -1,3 +1,6 @@
+/* ====================== */
+/* ==== HERO SECTION ==== */
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -7,6 +10,8 @@
   position: relative;
   z-index: 1;
 }
+
+/* ==== PRIMEIRA LINHA ==== */
 
 .landing__eyebrow {
   display: flex;
@@ -36,6 +41,8 @@
   margin: 1rem;
 }
 
+/* ==== TITULO ==== */
+
 .landing__title {
   position: relative;
   width: auto;
@@ -64,6 +71,8 @@
   z-index: -1;
 }
 
+/* ==== SUBTITULO ==== */
+
 .landing__subtitle {
   font-family: "Cinzel";
   color: var(--gold-primary);
@@ -72,6 +81,8 @@
   letter-spacing: 7px;
   padding-bottom: 15px;
 }
+
+/* ==== LINHA COM DIAMANTE ==== */
 
 .landing__diamond {
   color: var(--gold-primary);
@@ -106,6 +117,8 @@
   );
 }
 
+/* ==== Descrição ==== */
+
 .landing__description {
   font-family: "Crimson Text";
   font-size: 19px;
@@ -116,6 +129,9 @@
   width: 90%;
 }
 
+/* ================= */
+/* ==== PETALAS ==== */
+
 #particleCanvas {
   position: fixed;
   top: 0;
@@ -125,8 +141,9 @@
   z-index: 0;
   pointer-events: none;
 }
+/* ======================== */
+/* ==== BOTÕES DE AÇÃO ==== */
 
-/* Base compartilhada */
 .landing__cta {
   display: flex;
   gap: 2rem;
@@ -171,3 +188,7 @@
   color: var(--gold-primary);
   transform: translateY(-2px);
 }
+
+/* ===================== */
+/* ==== SEÇÃO SOBRE ==== */
+
