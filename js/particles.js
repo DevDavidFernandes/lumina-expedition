@@ -7,13 +7,15 @@ canvas.height = window.innerHeight;
 
 function criarPetala() {
   return {
-    x: Math.random() * (canvas.width + 100) - 50,
-    y: Math.random() * canvas.height, // onde ela nasce? (dica: acima da tela)
-    size: Math.random() * (5 - 2) + 2, // entre 2 e 5
-    opacity: Math.random() * (0.9 - 0.3) + 0.3, // entre 0.3 e 0.9
-    speedY: Math.random() * (0.8 - 0.3) + 0.3, // entre 0.3 e 0.8
-    speedX: Math.random() * 0.6 - 0.3, // entre -0.3 e 0.3
+    x: Math.random() * canvas.width,
+    y: Math.random() * -50,
+    size: Math.random() * (5 - 2) + 2,
+    opacity: Math.random() * 0.4 + 0.5,
+    fadeSpeed: Math.random() * 0.003 + 0.0002,
+    speedY: Math.random() * (0.8 - 0.3) + 0.3,
+    speedX: Math.random() * 0.6 - 0.3,
     rotation: Math.random() * 360,
+    rotationSpeed: Math.random() * 0.8 - 0.4,
   };
 }
 
@@ -28,10 +30,14 @@ function atualizar() {
   petalas.forEach((petala, index) => {
     petala.y += petala.speedY;
     petala.x += petala.speedX;
-    petala.rotation += 0.5;
+    petala.rotation += petala.rotationSpeed;
 
-    if (petala.y > canvas.height) {
-      resetarPetala(petala);
+    // Diminui a opacidade gradualmente
+    petala.opacity -= petala.fadeSpeed;
+
+    // Recria a pétala quando ela some ou sai da tela
+    if (petala.opacity <= 0 || petala.y > canvas.height) {
+      petalas[index] = criarPetala();
     }
   });
 }
@@ -44,15 +50,27 @@ function resetarPetala(petala) {
 }
 
 function desenhar() {
+  // Limpa o canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   petalas.forEach((petala) => {
-    ctx.beginPath();
+    ctx.save();
 
-    ctx.arc(petala.x, petala.y, petala.size, 0, Math.PI * 2);
+    // Move a origem para a posição da pétala
+    ctx.translate(petala.x, petala.y);
+
+    // Rotaciona o sistema de coordenadas
+    ctx.rotate(petala.rotation * (Math.PI / 180));
+
+    // Desenha a pétala
+    ctx.beginPath();
+    ctx.ellipse(0, 0, petala.size, petala.size * 2.5, 0, 0, Math.PI * 2);
 
     ctx.fillStyle = `rgba(240, 235, 220, ${petala.opacity})`;
     ctx.fill();
+
+    // Restaura o estado original do canvas
+    ctx.restore();
   });
 }
 
