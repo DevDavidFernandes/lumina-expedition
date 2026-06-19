@@ -6,70 +6,74 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function criarPetala() {
+  const tipo = Math.random() < 0.3 ? "petala" : "poeira";
+
   return {
+    tipo,
+
     x: Math.random() * canvas.width,
     y: Math.random() * -50,
-    size: Math.random() * (5 - 2) + 2,
+
+    size: tipo === "petala" ? Math.random() * 5 + 4 : Math.random() * 1.5 + 0.5,
+
     opacity: Math.random() * 0.4 + 0.5,
-    fadeSpeed: Math.random() * 0.003 + 0.0002,
-    speedY: Math.random() * (0.8 - 0.3) + 0.3,
+
+    fadeSpeed: Math.random() * 0.0005 + 0.0002,
+
+    speedY:
+      tipo === "petala" ? Math.random() * 1.2 + 0.6 : Math.random() * 0.4 + 0.1,
+
     speedX: Math.random() * 0.6 - 0.3,
+
     rotation: Math.random() * 360,
     rotationSpeed: Math.random() * 0.8 - 0.4,
   };
 }
 
-// 1. Criar várias pétalas de uma vez
 const petalas = [];
+
 for (let i = 0; i < 60; i++) {
   petalas.push(criarPetala());
 }
 
-// 2. Atualizar posição de cada pétala (mover)
 function atualizar() {
   petalas.forEach((petala, index) => {
     petala.y += petala.speedY;
     petala.x += petala.speedX;
     petala.rotation += petala.rotationSpeed;
-
-    // Diminui a opacidade gradualmente
     petala.opacity -= petala.fadeSpeed;
 
-    // Recria a pétala quando ela some ou sai da tela
     if (petala.opacity <= 0 || petala.y > canvas.height) {
       petalas[index] = criarPetala();
     }
   });
 }
 
-function resetarPetala(petala) {
-  petala.x = Math.random() * canvas.width;
-  petala.y = -10;
-  petala.opacity = Math.random() * 0.6 + 0.3;
-  petala.speedX = Math.random() * 0.6 - 0.3;
-}
-
 function desenhar() {
-  // Limpa o canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   petalas.forEach((petala) => {
     ctx.save();
 
-    // Move a origem para a posição da pétala
     ctx.translate(petala.x, petala.y);
-
-    // Rotaciona o sistema de coordenadas
     ctx.rotate(petala.rotation * (Math.PI / 180));
 
-    // Desenha a pétala
     ctx.beginPath();
-    ctx.ellipse(0, 0, petala.size, petala.size * 2.5, 0, 0, Math.PI * 2);
 
-    ctx.fillStyle = `rgba(240, 235, 220, ${petala.opacity})`;
+    if (petala.tipo === "petala") {
+      ctx.ellipse(0, 0, petala.size, petala.size * 2.5, 0, 0, Math.PI * 2);
+    } else {
+      ctx.arc(0, 0, petala.size, 0, Math.PI * 2);
+    }
+
+    const cor =
+      petala.tipo === "petala"
+        ? `rgba(180, 60, 50, ${petala.opacity})`
+        : `rgba(240, 235, 220, ${petala.opacity})`;
+
+    ctx.fillStyle = cor;
     ctx.fill();
 
-    // Restaura o estado original do canvas
     ctx.restore();
   });
 }
