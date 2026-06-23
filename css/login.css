@@ -59,6 +59,7 @@
   display: flex;
   justify-content: center;
   background: none;
+  margin-top: 1rem;
 }
 
 .login-card h1::before {
@@ -98,7 +99,15 @@
   font-size: 1rem;
 }
 
+.login-card label {
+    font-size: 1rem;
+    display: flex;
+    align-items: left;
+    color: var(--text-main);
+}
+
 .login-card button {
+    
   background-color: var(--gold-muted);
   padding: 14px;
   border: none;
@@ -117,7 +126,7 @@
 /* ===== CADASTRO ===== */
 
 .login-card p:last-child {
-  color: var(--white-ink);
+  color: var(--text-main);
   margin-top: 1rem;
 }
 
