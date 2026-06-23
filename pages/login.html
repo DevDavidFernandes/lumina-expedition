@@ -9,42 +9,49 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link rel="icon" type="image/svg+xml" href="assets/icon/favicon (2).svg" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/landing.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/landing.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
+    <!-- ================= -->
+    <!-- ==== Petalas ==== -->
 
+    <canvas id="particleCanvas"></canvas>
 
-    
+    <main>
+      <section class="login">
+        <!-- ==== BOTÃO VOLTAR ==== -->
+        <a href="../index.html"
+          ><i class="fa-solid fa-arrow-left" style="color: rgb(0, 0, 0)"></i>
+          Voltar</a
+        >
+        <!-- ==== CARD VOLTAR ==== -->
+        <div class="login-card">
+          <h1>LUMINA</h1>
+          <p>A Expedição Começa em Você</p>
+          <div class="landing__divider">
+            <div class="divider-line"></div>
+            <span class="landing__diamond">♦</span>
+            <div class="divider-line"></div>
+          </div>
+          <!-- ==== FORMULÁRIO ==== -->
+          <form action="">
+            <input type="email" />
+            <input type="password" />
+            <button>ENTRAR NA EXPEDIÇÃO</button>
+          </form>
+          <div class="landing__divider">
+            <div class="divider-line"></div>
+            <span class="landing__diamond">♦</span>
+            <div class="divider-line"></div>
+          </div>
+          <!-- ==== CADASTRO ==== -->
+          <p>Novo expedicionário?<a href="register.html">Cadastre-se</a></p>
+        </div>
+      </section>
+    </main>
 
-    <!-- ================ -->
-    <!-- ==== FOOTER ==== -->
-    <footer class="footer">
-      <div class="footer-divider">
-        <div class="divider-line"></div>
-        <span class="landing__diamond">♦</span>
-        <div class="divider-line"></div>
-      </div>
-
-      <div class="footer-logo">
-        <h2>LUMINA</h2>
-        <p>A Expedição Começa em Você</p>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://github.com/DevDavidFernandes" target="_blank"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-        <a href="www.linkedin.com/in/davidfernandesramos" target="_blank"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-      </div>
-
-      <p class="footer-copyright">
-        © 2026 Lumina • Toda jornada começa com um primeiro passo.
-      </p>
-    </footer>
-    <script src="js/particles.js"></script>
+    <script src="../js/particles.js"></script>
   </body>
 </html>
