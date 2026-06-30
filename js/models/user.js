@@ -8,4 +8,6 @@ const User = {
   avatar: "", // item equipado atualmente
   inventario: [], // itens comprados com chroma
   dataCriacao: "", // ISO string: new Date().toISOString()
+
+  
 };
